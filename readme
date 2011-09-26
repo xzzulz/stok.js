@@ -1,0 +1,76 @@
+//############################################################
+//
+//			stok.js v0.1
+//
+//############################################################
+//
+//	javascript component for modular application loading.
+//	
+//	Uses:
+//		- javascript application load progress bar
+//		- javacsript application loader
+//		- javascript application dynamic loading of modules
+//	
+//	Current version requires jquery.
+//	
+//	To Use: 
+//		- add items to be loaded with the methods provided.
+//		- set a loading completed callback
+//		- set a laoding progressbar
+//		- call load() to load all items.
+//	
+//	############################################################
+//	
+//	How to use details:
+//
+
+	// create loader instance
+	var stokLoader = g10.com.loader;
+	
+	// assign a jqueryUI progressbar
+	stokLoader.setJqueryUIprogressbar( $( "#startProgressbar" ) );
+	
+	// add load completed callback
+	stokLoader.loadCompletedAction = loadCompleteAction;
+	
+	
+	// add items to load
+	
+	stokLoader.addImages([
+		'image1.jpg', 
+		'image2.jpg', 
+		'image3.jpg'
+	]);
+	
+	stokLoader.addScripts([
+		'script1.js', 
+		'script2.js'
+	]);
+	
+	// add more scripts
+	stokLoader.addScripts([
+		'script3.js', 
+		'script4.js'
+	]);
+	
+	// json data
+	stokLoader.addScripts([
+		{ url: 'data1', callback: function1 }
+		{ url: 'data2', callback: function1 }
+	]);
+	
+	
+	stokLoader.addTextData([
+		{ url: 'text1', callback: function1 }
+		{ url: 'text2', callback: function1 }
+	]);
+	
+	
+	// load all
+	// "loadCompletedAction" callback is called
+	// when loading is completed
+	stokLoader.load();
+		
+		
+		
+		
