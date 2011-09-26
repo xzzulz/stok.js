@@ -24,14 +24,14 @@
 //	How to use details:
 //
 
-	// create loader instance
-	var stokLoader = g10.com.loader;
+	// get loader instance
+	var stokLoader = stok;
 	
 	// assign a jqueryUI progressbar
 	stokLoader.setJqueryUIprogressbar( $( "#startProgressbar" ) );
 	
 	// add load completed callback
-	stokLoader.loadCompletedAction = loadCompleteAction;
+	stokLoader.loadCompletedAction = function() { alert('done') };
 	
 	
 	// add items to load
