@@ -25,12 +25,14 @@
 //
 
 	// get loader instance
+	// ( simple example, may vary depending where the 
+	//   instance is stored )
 	var stokLoader = stok;
 	
-	// assign a jqueryUI progressbar
+	// assign a jqueryUI progressbar (optional)
 	stokLoader.setJqueryUIprogressbar( $( "#startProgressbar" ) );
 	
-	// add load completed callback
+	// add load completed callback (optional)
 	stokLoader.loadCompletedAction = function() { alert('done') };
 	
 	
@@ -48,17 +50,18 @@
 	]);
 	
 	// add more scripts
+	// ( this set is loaded only after the previous 
+	//   set is loaded and executed )
 	stokLoader.addScripts([
 		'script3.js', 
 		'script4.js'
 	]);
 	
 	// json data
-	stokLoader.addScripts([
+	stokLoader.addJson([
 		{ url: 'data1', callback: function1 }
 		{ url: 'data2', callback: function1 }
 	]);
-	
 	
 	stokLoader.addTextData([
 		{ url: 'text1', callback: function1 }
